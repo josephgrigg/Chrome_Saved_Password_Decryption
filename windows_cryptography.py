@@ -9,8 +9,7 @@ crypt_unprotect_data = windll.crypt32.CryptUnprotectData
 		pvReserved, 		# Set to None
 		pPromptStruct, 		# Set to None
 		dwFlags,  			# Set to None
-		pDataOut) 	# A pointer to an empty DataBlob where the output will be
-					stored.
+		pDataOut) 	# A pointer to an empty DataBlob where the output will be stored.
 
 	For more information on the function CryptUnprotectData, visit:
 	https://msdn.microsoft.com/en-us/library/windows/desktop/aa380882.aspx
@@ -26,8 +25,6 @@ class DataBlob(Structure):
 
 
 def decrypt(binary_encryption):
-	# CryptProtectData encrypts passwords as hexidecimal numbers, they must
-	# be converted to binary form before decryption.
 	data_in = DataBlob(len(binary_encryption), c_char_p(binary_encryption))
 	data_out = DataBlob()
 	if crypt_unprotect_data(byref(data_in), None, None, None, None, None, byref(data_out)):
