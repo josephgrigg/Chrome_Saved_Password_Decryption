@@ -6,7 +6,7 @@
 To demonstrate a security flaw with Chrome's password manager.
 
 ## The Problem:
-If you try to view your saved passwords through the Chrome browser, you will receive a pop-up requesting their Windows user account password as shown below.
+If you try to view your saved passwords through the Chrome browser, you will receive a pop-up requesting your Windows user account password as shown below.
 
 ![](http://i.imgur.com/qjdHrFL.png)
 
